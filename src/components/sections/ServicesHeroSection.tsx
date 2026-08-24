@@ -1,18 +1,17 @@
-import Image from "next/image";
-import { heroImageServices } from "@/lib/content";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 
 export function ServicesHeroSection() {
   return (
     <header className="relative min-h-screen flex items-center pt-20 px-margin-mobile md:px-margin-desktop">
       <div className="absolute inset-0 z-0">
-        <Image
-          src={heroImageServices.src}
-          alt={heroImageServices.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="w-full h-full object-cover opacity-40"
+        <video
+          src="/Service.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian-base/50 via-obsidian-base/80 to-obsidian-base" />
       </div>
