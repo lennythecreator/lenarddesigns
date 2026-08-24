@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lenard Designs - Initializing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#353534",
+                      "background": "#141313",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-fixed": "#eae0de",
+                      "outline-variant": "#444845",
+                      "on-primary-fixed-variant": "#454745",
+                      "obsidian-base": "#0B0C0E",
+                      "surface": "#141313",
+                      "on-primary-fixed": "#1a1c1b",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed": "#1f1b1a",
+                      "outline": "#8e928e",
+                      "inverse-on-surface": "#313030",
+                      "error-container": "#93000a",
+                      "tertiary": "#ffffff",
+                      "surface-tint": "#c6c7c4",
+                      "surface-container-highest": "#353534",
+                      "on-tertiary": "#342f2e",
+                      "on-secondary-fixed-variant": "#464749",
+                      "secondary": "#c7c6c9",
+                      "on-background": "#e5e2e1",
+                      "surface-dim": "#141313",
+                      "secondary-container": "#464749",
+                      "tertiary-container": "#eae0de",
+                      "on-tertiary-fixed-variant": "#4b4544",
+                      "inverse-primary": "#5d5f5d",
+                      "on-secondary": "#303033",
+                      "soft-white": "#F5F5F2",
+                      "tertiary-fixed-dim": "#cdc5c3",
+                      "surface-container-high": "#2a2a29",
+                      "on-surface": "#e5e2e1",
+                      "error": "#ffb4ab",
+                      "on-primary": "#2f312f",
+                      "secondary-fixed-dim": "#c7c6c9",
+                      "on-secondary-container": "#b6b5b7",
+                      "primary-container": "#e2e3e0",
+                      "primary": "#ffffff",
+                      "on-secondary-fixed": "#1b1c1e",
+                      "on-tertiary-container": "#696362",
+                      "on-error-container": "#ffdad6",
+                      "deep-matte": "#050506",
+                      "surface-bright": "#3a3939",
+                      "glass-border": "rgba(245, 245, 242, 0.15)",
+                      "secondary-fixed": "#e3e2e5",
+                      "surface-container": "#201f1f",
+                      "on-surface-variant": "#c4c7c3",
+                      "surface-container-low": "#1c1b1b",
+                      "on-error": "#690005",
+                      "primary-fixed-dim": "#c6c7c4",
+                      "primary-fixed": "#e2e3e0",
+                      "on-primary-container": "#636563",
+                      "obsidian": "#0B0C0E",
+                      "graphite": "#24272B",
+                      "platinum": "#E5E4E2",
+                      "charcoal": "#36454F"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap-md": "120px",
+                      "gutter": "32px",
+                      "margin-desktop": "64px",
+                      "section-gap-lg": "240px",
+                      "margin-mobile": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Plus Jakarta Sans",
+                              "monospace"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-xl": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl": [
+                              "120px",
+                              {
+                                      "lineHeight": "100px",
+                                      "letterSpacing": "-0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "48px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "80px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in-delayed {
+            opacity: 0;
+            animation: fade-in-up 0.8s ease-out 0.5s forwards;
+        }
+
+        @keyframes fade-in-enter {
+            0% { opacity: 0; transform: translateY(5px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .enter-btn-anim {
+            opacity: 0;
+            animation: fade-in-enter 1s ease-out 2.5s forwards;
+        }
+        
+        /* WebGL Canvas */
+        #glcanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-soft-white antialiased overflow-hidden min-h-screen relative flex flex-col justify-center items-center">
+<!-- WebGL Background -->
+<canvas id="glcanvas"></canvas>
+<!-- Central Content Container -->
+<main class="relative z-10 flex flex-col items-center justify-center w-full max-w-5xl px-margin-mobile md:px-margin-desktop">
+<!-- Animated SVG Logo -->
+<div class="mb-16 relative w-full flex items-center justify-center">
+<!-- STITCH_SVG_START:ANIMATION_26 class="w-full max-w-4xl h-64" --><div class="w-full max-w-4xl h-64" id="animated-svg-ANIMATION_26" style="display:block;"><svg viewbox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+    
+    .brand-text { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      font-weight: 700; 
+      fill: #F5F5F2; 
+      font-size: 80px; 
+      text-anchor: middle;
+      letter-spacing: -0.02em;
+    }
+    
+    .dot { fill: #A8ADB5; }
+    
+    /* Initially hide the extra letters */
+    .expandable {
+      opacity: 0;
+      display: inline-block;
+    }
+
+    /* Animation for the L and D to move apart */
+    @keyframes moveL {
+      0%, 20% { transform: translateX(0); }
+      80%, 100% { transform: translateX(-240px); }
+    }
+    
+    @keyframes moveD {
+      0%, 20% { transform: translateX(0); }
+      80%, 100% { transform: translateX(265px); }
+    }
+
+    /* Animation for the expanding letters to fade in */
+    @keyframes revealText {
+      0%, 30% { opacity: 0; transform: translateY(5px); filter: blur(5px); }
+      80%, 100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    /* Dot specific animation: fade out when expanding */
+    @keyframes fadeDot {
+      0%, 20% { opacity: 1; }
+      40%, 100% { opacity: 0; }
+    }
+
+    .letter-L { animation: moveL 3.5s cubic-bezier(0.85, 0, 0.15, 1) forwards; }
+    .letter-D { animation: moveD 3.5s cubic-bezier(0.85, 0, 0.15, 1) forwards; }
+    .expand-text { animation: revealText 3.5s cubic-bezier(0.85, 0, 0.15, 1) forwards; }
+    .dot { animation: fadeDot 3.5s cubic-bezier(0.85, 0, 0.15, 1) forwards; }
+
+    /* Container reveal */
+    @keyframes containerReveal {
+      0% { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .logo-container { animation: containerReveal 1.5s ease-out forwards; }
+    
+    /* Glow pulse for premium feel */
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(245, 245, 242, 0.1)); }
+      50% { filter: drop-shadow(0 0 25px rgba(245, 245, 242, 0.25)); }
+    }
+    .brand-text { animation: glow 4s ease-in-out infinite; }
+  </style>
+<g class="logo-container">
+<!-- Centered initially at x=400, y=220 -->
+<text class="brand-text" y="220">
+<tspan class="letter-L" x="400">L</tspan>
+<tspan class="dot">.</tspan>
+<tspan class="letter-D" x="400">D</tspan>
+</text>
+<!-- Expanded text fragments -->
+<text class="brand-text expand-text" y="220">
+<tspan dy="0" font-size="80" x="260">ENARD</tspan>
+<tspan dy="0" font-size="80" x="545">ESIGNS</tspan>
+</text>
+</g>
+</svg></div><!-- STITCH_SVG_END:ANIMATION_26 -->
+</div>
+<!-- Enter Button -->
+<button class="mt-8 enter-btn-anim text-soft-white font-label-caps tracking-[0.2em] uppercase transition-all duration-300 relative group cursor-pointer border border-soft-white/20 hover:border-soft-white/60 bg-transparent hover:bg-soft-white/5 px-10 py-4 rounded-full backdrop-blur-sm">
+        ENTER
+</button>
+</main>
+<script>
+        // WebGL Setup
+        const canvas = document.getElementById('glcanvas');
+        const gl = canvas.getContext('webgl');
+
+        if (gl) {
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                gl.viewport(0, 0, canvas.width, canvas.height);
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const vertexShaderSource = `
+                attribute vec2 position;
+                varying vec2 v_texCoord;
+                void main() {
+                    gl_Position = vec4(position, 0.0, 1.0);
+                    v_texCoord = position * 0.5 + 0.5;
+                }
+            `;
+
+            const fragmentShaderSource = `<webgl-shader src="{{DATA:ANIMATION:ANIMATION_36}}" class=""></webgl-shader>`;
+
+            function createShader(gl, type, source) {
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+                if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                    console.error(gl.getShaderInfoLog(shader));
+                    gl.deleteShader(shader);
+                    return null;
+                }
+                return shader;
+            }
+
+            const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+            const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+
+            const program = gl.createProgram();
+            gl.attachShader(program, vertexShader);
+            gl.attachShader(program, fragmentShader);
+            gl.linkProgram(program);
+
+            const positionBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+                -1.0, -1.0,
+                 1.0, -1.0,
+                -1.0,  1.0,
+                -1.0,  1.0,
+                 1.0, -1.0,
+                 1.0,  1.0
+            ]), gl.STATIC_DRAW);
+
+            const positionLocation = gl.getAttribLocation(program, "position");
+            gl.enableVertexAttribArray(positionLocation);
+            gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+            const timeLocation = gl.getUniformLocation(program, "u_time");
+            const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+
+            function render(time) {
+                time *= 0.001; 
+                gl.useProgram(program);
+                gl.uniform1f(timeLocation, time);
+                gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+        }
+    </script>
+</body></html>
