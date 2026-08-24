@@ -26,9 +26,11 @@ export function TopNavBar() {
         <BrandLogo href="/" />
         <NavLinks items={navItems} active={activeLabel} />
         <div className="flex items-center gap-4">
-          <Button href="#" variant="ghost" size="md" className="hidden md:inline-flex">
-            Let&apos;s Talk
-          </Button>
+          <div className="hidden md:inline-flex">
+            <Button href="#" variant="ghost" size="md">
+              Let&apos;s Talk
+            </Button>
+          </div>
           <MobileMenuButton open={open} onClick={() => setOpen((v) => !v)} />
         </div>
       </div>
