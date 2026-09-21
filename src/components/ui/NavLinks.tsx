@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/transitions/TransitionLink";
 import type { NavItem } from "@/lib/content";
 
 type NavLinksProps = {
@@ -10,23 +10,23 @@ type NavLinksProps = {
 export function NavLinks({ items, active, className = "" }: NavLinksProps) {
   return (
     <div className={`hidden md:flex items-center gap-8 ${className}`}>
-{items.map((item) =>
+ {items.map((item) =>
         item.label === active ? (
-          <Link
+          <TransitionLink
             key={item.label}
             href={item.href}
             className="font-label-caps text-label-caps-link text-primary nav-link-shimmer"
           >
             {item.label}
-          </Link>
+          </TransitionLink>
         ) : (
-          <Link
+          <TransitionLink
             key={item.label}
             href={item.href}
             className="font-label-caps text-label-caps-link text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link-hover"
           >
             {item.label}
-          </Link>
+          </TransitionLink>
         )
       )}
     </div>

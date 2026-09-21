@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { TransitionLink } from "@/components/transitions/TransitionLink";
 
 type BrandLogoProps = {
   variant?: "landing" | "project" | "services";
@@ -38,9 +40,9 @@ export function BrandLogo({
 
   if (href) {
     return (
-      <Link href={href} className={className}>
+      <TransitionLink href={href} className={className}>
         {label}
-      </Link>
+      </TransitionLink>
     );
   }
 

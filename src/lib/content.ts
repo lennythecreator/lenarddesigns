@@ -24,6 +24,20 @@ export type Project = {
   layout: "left" | "right";
 };
 
+export type Chapter = {
+  eyebrow: string;
+  title: string;
+  body: string;
+};
+
+export type ProjectDetails = {
+  id: string;
+  hero?: { subtitle?: string; image?: ImageAsset };
+  problem: Chapter & { bullets?: string[]; image?: ImageAsset };
+  idea: Chapter & { insight?: string; gallery?: ImageAsset[] };
+  result: Chapter & { gallery?: ImageAsset[]; metrics?: { label: string; value: string }[]; quote?: Testimonial };
+};
+
 export type Testimonial = {
   quote: string;
   attribution: string;
@@ -99,7 +113,7 @@ export const projects: Project[] = [
       src: "/Zizi.png",
       alt: "A highly detailed, cinematic rendering of a futuristic mobile operating system interface floating in a dark, atmospheric void. The UI features ultra-sharp glassmorphic elements, glowing neon accents in deep blues and purples, and sophisticated technical readouts.",
     },
-    href: "#",
+    href: "/projects/Zizi",
     layout: "left",
   },
   {
@@ -112,7 +126,7 @@ export const projects: Project[] = [
       src: "/SiteSense.png",
       alt: "A cinematic rendering of an AI analytics command center with layered, high-contrast UI panels processing complex data streams in a dark space.",
     },
-    href: "#",
+    href: "/projects/project-sitesense",
     layout: "right",
   },
   
@@ -122,6 +136,79 @@ export const testimonial: Testimonial = {
   quote:
     "\u201cLenard Designs transformed our vision into a polished reality. Their intersection of design and engineering is truly unique, delivering a product that feels both technologically advanced and deeply human.\u201d",
   attribution: "Founder, Tech Ventures",
+};
+
+export const projectDetails: Record<string, ProjectDetails> = {
+  Zizi: {
+    id: "Zizi",
+    hero: {
+      subtitle: "A real estate platform enabling diaspora buyers to purchase properties securely in Africa.",
+    },
+    problem: {
+      eyebrow: "01 — Problem",
+      title: "Diaspora buyers couldn't trust or track off-plan purchases from abroad.",
+      body: "Fragmented listings, opaque payment flows, and no single view of title verification left buyers relying on intermediaries. The result was stalled decisions and eroded confidence in remote ownership.",
+      bullets: ["No verified title chain in one place", "Offline payment proof, manual reconciliation", "No progress visibility post-deposit"],
+      image: { src: "/Zizi.png", alt: "Zizi platform overview — cinematic UI showing property verification flow" },
+    },
+    idea: {
+      eyebrow: "02 — Idea",
+      title: "A single cinematic command surface for verified buying.",
+      body: "We bet on a glassmorphic, high-contrast sales surface that collapses verification, inventory, and escrow into one editorial story — prioritizing trust over catalogue density.",
+      insight: "Trust is the interface: if verification feels machined and legible, conversion follows.",
+      gallery: [
+        { src: "/Zizi.png", alt: "Zizi gallery — property detail with verification badge" },
+        { src: "/Zizi.png", alt: "Zizi gallery — escrow payment timeline" },
+      ],
+    },
+    result: {
+      eyebrow: "03 — Result",
+      title: "From uncertainty to owned — trackable, staged, and human.",
+      body: "A bespoke editorial details page now carries the narrative: Problem → Idea → Result with full-bleed hero, split-show galleries, and proof blocks tied to Obsidian Cinematic tokens.",
+      gallery: [{ src: "/Zizi.png", alt: "Zizi result gallery — completed purchase state" }],
+      metrics: [
+        { label: "Inquiry to verified lead", value: "+34%" },
+        { label: "Time to proof of title", value: "-42%" },
+      ],
+      quote: {
+        quote: "Zizi finally made remote buying feel as tangible as being on site.",
+        attribution: "Diaspora buyer, pilot cohort",
+      },
+    },
+  },
+  "project-sitesense": {
+    id: "project-sitesense",
+    hero: {
+      subtitle: "An AI-powered auditing tool that flags accessibility issues in seconds, not minutes.",
+    },
+    problem: {
+      eyebrow: "01 — Problem",
+      title: "Manual audits couldn't keep pace with the state's web footprint.",
+      body: "The Maryland state government needed to improve accessibility across its websites, but the standard process, manual review or off-the-shelf auditing software, was slow and hard to scale across so many properties.",
+      image: { src: "/SiteSense.png", alt: "SiteSense problem — manual accessibility auditing workflow" },
+    },
+    idea: {
+      eyebrow: "02 — Idea",
+      title: "Automated auditing, built on vision models and WCAG 2.",
+      body: "The CoNA Lab set out to bring Site Sense to life: an automated auditing tool leveraging vision models and the lab's own custom API. I partnered with the backend developer to build the system, taking ownership of the UX design and interface engineering. I structured audit data around WCAG 2 standards so auditors could act on results faster.",
+      gallery: [
+        { src: "/SiteSense.png", alt: "SiteSense idea gallery — automated audit interface" },
+        { src: "/SiteSense2.png", alt: "SiteSense gallery — WCAG compliance breakdown view" },
+        { src: "/SiteSense3.png", alt: "SiteSense gallery — audit results dashboard" },
+        { src: "/SiteSense4.png", alt: "SiteSense gallery — detailed accessibility issue view" },
+      ],
+    },
+    result: {
+      eyebrow: "03 — Result",
+      title: "A prototype faster than the industry incumbents.",
+      body: "After weeks of collaboration, we shipped a testable prototype ready for real users. Typical auditing tools took minutes to scan a site. Site Sense returned full results in under 30 seconds, with more utility than the tools it was built to replace.",
+      gallery: [
+        { src: "/SiteSense3.png", alt: "SiteSense result gallery — audit results overview" },
+        { src: "/SiteSense4.png", alt: "SiteSense result gallery — detailed issue remediation view" },
+      ],
+      metrics: [{ label: "Audit time", value: "<30s" }],
+    },
+  },
 };
 
 const imageWebDesign = {

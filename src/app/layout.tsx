@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { SplashScreen } from "@/components/splash/SplashScreen";
+import { PageTransition } from "@/components/transitions/PageTransition";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -35,7 +36,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full selection:bg-soft-white selection:text-obsidian-base">
         <SplashScreen />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );
