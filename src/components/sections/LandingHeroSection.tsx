@@ -19,10 +19,9 @@ export function LandingHeroSection() {
             <br />
             Engineering Reality.
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
-            Lenard Designs pioneers the intersection of visionary aesthetics and
-            rigorous technical execution, forging digital experiences that
-            define the next era of human-computer interaction.
+          <p className="font-body-lg text-body-lg text-on-surface max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
+            Great design and solid engineering rarely come from the same place.
+            Lenard Designs is built to deliver both.
           </p>
         </div>
       </div>
