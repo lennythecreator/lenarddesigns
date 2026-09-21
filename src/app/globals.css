@@ -257,7 +257,9 @@ body {
   background-color: var(--page-curtain-color);
   will-change: transform;
   pointer-events: none; /* never block interaction with the underlying page */
-  /* transform is driven by framer-motion controls */
+  /* SSR fallback: start off-screen so no-JS / pre-hydration isn't a black wall.
+     Framer-motion controls drive transform after hydration. */
+  transform: translateY(-100%);
 }
 
 .page-content {

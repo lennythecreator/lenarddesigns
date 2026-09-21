@@ -158,14 +158,21 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     <PageVisibilityContext.Provider
       value={{ visible: !transitioning, navigate, isTransitioning: transitioning }}
     >
-      {/* Curtain overlay — fixed, full-viewport, high z-index, no pointer capture. */}
+      {/* Curtain overlay — fixed, full-viewport, high z-index, no pointer capture.
+          initial/SSR state is off-screen (globals.css translateY(-100%)) so pre-hydration isn't a black wall. */}
       <motion.div
         className="page-curtain"
+        initial={{ y: "-100%" }}
         animate={curtainControls}
         aria-hidden="true"
       />
       {/* Page content — opacity driven by contentControls. */}
-      <motion.div className="page-content" animate={contentControls} style={{ width: "100%" }}>
+      <motion.div
+        className="page-content"
+        initial={{ opacity: 1 }}
+        animate={contentControls}
+        style={{ width: "100%" }}
+      >
         {content}
       </motion.div>
     </PageVisibilityContext.Provider>
