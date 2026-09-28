@@ -31,7 +31,7 @@ export function TopNavBar() {
         <NavLinks items={navItems} active={activeLabel} />
         <div className="flex items-center gap-4">
           <div className="hidden md:inline-flex">
-            <Button href="#" variant="ghost" size="md">
+            <Button href="/contact" variant="ghost" size="md">
               Let&apos;s Talk
             </Button>
           </div>
@@ -54,6 +54,13 @@ export function TopNavBar() {
               {item.label}
             </TransitionLink>
           ))}
+          <TransitionLink
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="font-label-caps text-label-caps-link text-primary hover:opacity-80 transition-opacity duration-300"
+          >
+            Let&apos;s Talk
+          </TransitionLink>
         </div>
       )}
     </nav>

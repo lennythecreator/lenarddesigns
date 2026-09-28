@@ -59,6 +59,9 @@ export type FooterConfig = {
   copyright: string;
 };
 
+export type { ContactInfo } from "./contact";
+export { contactInfo } from "./contact";
+
 export const navItems: NavItem[] = [
   { label: "Work", href: "/" },
   { label: "Services", href: "/services" },

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { FooterConfig as FooterConfigType } from "@/lib/content";
+import { contactInfo } from "@/lib/content";
 import { BrandLogo } from "./BrandLogo";
 
 type FooterProps = {
@@ -23,6 +24,21 @@ export function Footer({ config }: FooterProps) {
                   {item.label}
                 </Link>
               ))}
+            </div>
+            <div className="flex gap-4 font-label-caps text-label-caps text-on-surface-variant">
+              <Link
+                href={contactInfo.emailHref}
+                className="hover:text-primary transition-all duration-300"
+              >
+                {contactInfo.email}
+              </Link>
+              <span aria-hidden>|</span>
+              <Link
+                href={contactInfo.phoneHref}
+                className="hover:text-primary transition-all duration-300"
+              >
+                {contactInfo.phone}
+              </Link>
             </div>
             <div className="font-label-caps text-label-caps text-on-surface-variant">
               {config.copyright}
@@ -51,6 +67,21 @@ export function Footer({ config }: FooterProps) {
               </Link>
             ))}
           </div>
+          <div className="flex gap-4 font-label-caps text-label-caps text-on-surface-variant">
+            <Link
+              href={contactInfo.emailHref}
+              className="hover:text-soft-white transition-colors"
+            >
+              {contactInfo.email}
+            </Link>
+            <span aria-hidden>|</span>
+            <Link
+              href={contactInfo.phoneHref}
+              className="hover:text-soft-white transition-colors"
+            >
+              {contactInfo.phone}
+            </Link>
+          </div>
           <div className="font-body-md text-body-md text-on-surface-variant">
             {config.copyright}
           </div>
@@ -75,6 +106,21 @@ export function Footer({ config }: FooterProps) {
               {item.label.toUpperCase()}
             </Link>
           ))}
+        </div>
+        <div className="flex gap-4 mb-8 md:mb-0 font-label-caps text-label-caps text-on-surface-variant">
+          <Link
+            href={contactInfo.emailHref}
+            className="hover:text-primary transition-colors duration-300"
+          >
+            {contactInfo.email}
+          </Link>
+          <span aria-hidden>|</span>
+          <Link
+            href={contactInfo.phoneHref}
+            className="hover:text-primary transition-colors duration-300"
+          >
+            {contactInfo.phone}
+          </Link>
         </div>
         <div className="font-label-caps text-label-caps text-soft-white">
           {config.copyright}

@@ -8,7 +8,7 @@ export function CTASection() {
         <br />
         Launch Today.
       </h2>
-      <Button variant="primary" size="lg" href="#" className="tracking-widest">
+      <Button variant="primary" size="lg" href="/contact" className="tracking-widest">
         LET&apos;S TALK
       </Button>
     </section>
