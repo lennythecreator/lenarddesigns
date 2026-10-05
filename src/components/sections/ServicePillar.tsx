@@ -1,8 +1,22 @@
-import Image from "next/image";
+import {
+  Branches,
+  Exploded,
+  Phosphor,
+  Phone,
+  Slow,
+} from "@lucasmarkes/hairline/react";
 import type { ServicePillar as ServicePillarData } from "@/lib/content";
 
 type ServicePillarProps = {
   pillar: ServicePillarData;
+};
+
+const figureByPillar: Record<string, typeof Exploded> = {
+  "website-design": Exploded,
+  "mobile-app": Phone,
+  "e-commerce": Slow,
+  "startup-mvp": Branches,
+  "marketing-event": Phosphor,
 };
 
 export function ServicePillar({ pillar }: ServicePillarProps) {
@@ -35,16 +49,24 @@ export function ServicePillar({ pillar }: ServicePillarProps) {
     </div>
   );
 
+  const Figure = figureByPillar[pillar.id] ?? Exploded;
+
   const image = (
-    <div className="relative w-full aspect-square md:aspect-[4/3] rounded glass-panel overflow-hidden cinematic-shadow">
-      <Image
-        src={pillar.image.src}
-        alt={pillar.image.alt}
-        fill
-        sizes="100vw"
-        className="object-cover mix-blend-screen opacity-80 hover:opacity-100 transition-opacity duration-700"
+    <div
+      className="relative w-full rounded glass-panel overflow-hidden cinematic-shadow p-6 md:p-10"
+      style={{
+        ["--hairline-plate" as string]: "#201f1f",
+        ["--hairline-hi" as string]: "#f5f5f2",
+        ["--hairline-edge" as string]: "#c4c7c3",
+        ["--hairline-mid" as string]: "#8e928e",
+        ["--hairline-lo" as string]: "#444845",
+      }}
+    >
+      <Figure
+        theme="dark"
+        intensity={0.6}
+        aria-label={pillar.image.alt}
       />
-      <div className="absolute inset-0 bg-deep-matte/20 hover:bg-transparent transition-colors duration-700" />
     </div>
   );
 

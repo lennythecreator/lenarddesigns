@@ -108,10 +108,10 @@ export const heroImageServices = {
 export const projects: Project[] = [
   {
     id: "Zizi",
-    meta: "A PropTech, a real estate platform for diaspora buyers. ",
+    meta: "PropTech / Real estate platform for diaspora buyers",
     title: "Zizi",
     description:
-      "A real estate platform enabling diaspora buyers to purchase properties securly in Africa. ",
+      "A real estate platform enabling diaspora buyers to purchase properties securely in Africa.",
     image: {
       src: "/Zizi.png",
       alt: "A highly detailed, cinematic rendering of a futuristic mobile operating system interface floating in a dark, atmospheric void. The UI features ultra-sharp glassmorphic elements, glowing neon accents in deep blues and purples, and sophisticated technical readouts.",
@@ -121,10 +121,10 @@ export const projects: Project[] = [
   },
   {
     id: "project-sitesense",
-    meta: "AI Platform / Data Visualization",
+    meta: "AI Tool / Accessibility Auditing",
     title: "SiteSense",
     description:
-      "An immersive analytical command center designed to process complex data streams. Utilizing cinematic depth and high-contrast material layering to transform abstract metrics into actionable, spatially aware intelligence.",
+      "An AI-powered auditing tool that flags accessibility issues in seconds, built for Maryland state web properties around WCAG 2.",
     image: {
       src: "/SiteSense.png",
       alt: "A cinematic rendering of an AI analytics command center with layered, high-contrast UI panels processing complex data streams in a dark space.",
@@ -306,7 +306,7 @@ export const footerConfigs: Record<string, FooterConfig> = {
       { label: "Careers", href: "#" },
       { label: "Instagram", href: "#" },
     ],
-    copyright: "© 2024 LENARD DESIGNS. ALL RIGHTS RESERVED.",
+    copyright: "© 2026 LENARD DESIGNS. ALL RIGHTS RESERVED.",
   },
   project: {
     variant: "project",
@@ -316,7 +316,7 @@ export const footerConfigs: Record<string, FooterConfig> = {
       { label: "LinkedIn", href: "#" },
       { label: "Instagram", href: "#" },
     ],
-    copyright: "© 2024 Lenard Designs. All rights reserved.",
+    copyright: "© 2026 Lenard Designs. All rights reserved.",
   },
   services: {
     variant: "services",
@@ -326,6 +326,6 @@ export const footerConfigs: Record<string, FooterConfig> = {
       { label: "LinkedIn", href: "#" },
       { label: "Twitter", href: "#" },
     ],
-    copyright: "© 2024 LENARD DESIGNS. ALL RIGHTS RESERVED.",
+    copyright: "© 2026 LENARD DESIGNS. ALL RIGHTS RESERVED.",
   },
 };
