@@ -10,7 +10,7 @@ import { Button } from "./Button";
 import { TransitionLink } from "@/components/transitions/TransitionLink";
 
 const ACTIVE_BY_PATH: Record<string, string> = {
-  "/": "Work",
+  "/": "Studio",
   "/projects": "Projects",
   "/services": "Services",
 };

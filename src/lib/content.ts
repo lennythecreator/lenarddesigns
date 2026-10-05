@@ -63,7 +63,7 @@ export type { ContactInfo } from "./contact";
 export { contactInfo } from "./contact";
 
 export const navItems: NavItem[] = [
-  { label: "Work", href: "/" },
+  { label: "Studio", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
 ];

@@ -37,14 +37,15 @@ export function ShowroomSection() {
                   {showroomEntry.title}
                 </h3>
               </div>
-              <button
-                className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-glass-border bg-obsidian-base/40 hover:bg-soft-white hover:text-obsidian-base transition-colors duration-300"
+              <Link
+                href="/projects/zizi"
+                className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full border border-glass-border bg-obsidian-base/40 hover:bg-soft-white hover:text-obsidian-base transition-colors duration-300"
                 aria-label={`View ${showroomEntry.title}`}
               >
                 <span className="material-symbols-outlined text-[18px] md:text-[24px]">
                   arrow_forward
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
