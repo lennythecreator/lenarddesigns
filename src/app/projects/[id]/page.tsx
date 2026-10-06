@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const details = projectDetails[id];
   if (!project || !details) return {};
   return {
-    title: `${project.title} — ${details.problem.title}`,
+    title: `${project.title} | Lenard Designs Case Study`,
     description: details.hero?.subtitle ?? project.description,
     openGraph: {
       images: [(details.hero?.image ?? project.image).src],
@@ -58,7 +58,6 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
           title={details.idea.title}
           body={details.idea.body}
           insight={details.idea.insight}
-          mirrored
         />
         <ChapterSection
           id="result"

@@ -8,7 +8,6 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/components/ui/select";
 import { contactInfo } from "@/lib/contact";
 
@@ -68,20 +67,24 @@ function validate(values: FormValues): FormErrors {
 }
 
 const inputClasses =
-  "w-full rounded-lg border border-glass-border bg-deep-matte px-4 py-3 font-body-md text-body-md text-soft-white placeholder:text-on-surface-variant/50 outline-none transition-colors duration-300 focus:border-soft-white/40";
+  "w-full rounded-lg border border-glass-border bg-deep-matte px-4 py-3.5 font-body-md text-body-md text-soft-white placeholder:text-on-surface-variant/70 outline-none transition-all duration-300 hover:border-soft-white/25 focus:border-soft-white/40 focus:shadow-[0_0_0_4px_rgba(245,245,242,0.07)] aria-[invalid=true]:border-error/70 aria-[invalid=true]:hover:border-error/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-soft-white/70";
 
 const labelClasses =
   "font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2 mb-2";
 
 const labelIconClasses = "material-symbols-outlined text-[16px]";
 
-const errorClasses = "mt-2 text-sm text-error";
+const errorClasses = "mt-2 flex items-center gap-1.5 font-body-md text-body-md text-error";
 
 export function ContactForm() {
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const selectedService = serviceOptions.find(
+    (option) => option.value === values.service
+  );
 
   function update<K extends keyof FormValues>(key: K, value: FormValues[K]) {
     setValues((prev) => ({ ...prev, [key]: value }));
@@ -152,19 +155,19 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-glass-border bg-obsidian-base p-8 md:p-12 text-center">
+      <div className="rounded-2xl border border-glass-border bg-obsidian-base p-8 md:p-12 text-center cinematic-shadow">
         <span className="material-symbols-outlined text-[48px] text-soft-white mb-4">
           check_circle
         </span>
         <p className="font-label-caps text-label-caps text-surface-tint mb-4">
           Message received
         </p>
-        <h2 className="font-headline-lg text-2xl md:text-headline-lg text-soft-white mb-4">
-          Thanks{values.name ? `, ${values.name}` : ""} — we&apos;ll be in
+        <h2 className="font-headline-lg text-headline-lg text-soft-white text-balance mb-4">
+          Thanks{values.name ? `, ${values.name}` : ""}. We&apos;ll be in
           touch.
         </h2>
         <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mb-8">
-          Your message is in — we&apos;ll reply to you shortly. Prefer direct
+          Your message is in. We&apos;ll reply to you shortly. Prefer direct
           contact? Email{" "}
           <a
             href={contactInfo.emailHref}
@@ -189,25 +192,29 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-glass-border bg-obsidian-base p-8 md:p-12">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-8 mb-8 pb-8 border-b border-glass-border">
+    <div className="relative overflow-hidden rounded-2xl border border-glass-border bg-obsidian-base p-8 md:p-12 cinematic-shadow">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[48rem] max-w-none -translate-x-1/2 rounded-full bg-soft-white/[0.05] blur-3xl"
+      />
+      <div className="relative grid gap-3 sm:grid-cols-2 mb-8 pb-8 border-b border-glass-border">
         <a
           href={contactInfo.emailHref}
-          className="font-label-caps text-label-caps-link text-soft-white hover:text-surface-tint transition-colors nav-link-hover w-fit inline-flex items-center gap-2"
+          className="inline-flex items-center gap-3 rounded-lg border border-glass-border bg-deep-matte px-4 py-3.5 transition-all duration-300 hover:border-soft-white/25 hover:bg-soft-white/5"
         >
-          <span className="material-symbols-outlined text-[16px]">mail</span>
-          {contactInfo.email}
+          <span className="material-symbols-outlined text-[18px] text-surface-tint">mail</span>
+          <span className="font-label-caps text-label-caps-link text-soft-white">{contactInfo.email}</span>
         </a>
         <a
           href={contactInfo.phoneHref}
-          className="font-label-caps text-label-caps-link text-on-surface-variant hover:text-primary transition-colors nav-link-hover w-fit inline-flex items-center gap-2"
+          className="inline-flex items-center gap-3 rounded-lg border border-glass-border bg-deep-matte px-4 py-3.5 transition-all duration-300 hover:border-soft-white/25 hover:bg-soft-white/5"
         >
-          <span className="material-symbols-outlined text-[16px]">call</span>
-          {contactInfo.phone}
+          <span className="material-symbols-outlined text-[18px] text-surface-tint">call</span>
+          <span className="font-label-caps text-label-caps-link text-soft-white">{contactInfo.phone}</span>
         </a>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
+      <form onSubmit={handleSubmit} noValidate className="relative flex flex-col gap-8">
         <div className="grid gap-6 md:grid-cols-2">
           <div>
             <label htmlFor="contact-name" className={labelClasses}>
@@ -228,6 +235,9 @@ export function ContactForm() {
             />
             {errors.name && (
               <p id="contact-name-error" role="alert" className={errorClasses}>
+                <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
+                  error
+                </span>
                 {errors.name}
               </p>
             )}
@@ -251,6 +261,9 @@ export function ContactForm() {
             />
             {errors.email && (
               <p id="contact-email-error" role="alert" className={errorClasses}>
+                <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
+                  error
+                </span>
                 {errors.email}
               </p>
             )}
@@ -264,33 +277,36 @@ export function ContactForm() {
           </label>
           <Select
             value={values.service}
-            onValueChange={(value) => update("service", value)}
+            // Radix fires a spurious onValueChange("") from its hidden native
+            // select when the controlled value changes inside a form
+            // (radix-ui/primitives#3135); "" is never a valid choice here.
+            onValueChange={(value) => {
+              if (value) update("service", value);
+            }}
           >
             <SelectTrigger
               id="contact-service"
+              className={errors.service ? "border-error/70" : undefined}
               aria-invalid={Boolean(errors.service)}
               aria-describedby={
                 errors.service ? "contact-service-error" : undefined
               }
             >
-              {(() => {
-                const selected = serviceOptions.find(
-                  (option) => option.value === values.service
-                );
-                return (
-                  <>
-                    {selected && (
-                      <span
-                        className="material-symbols-outlined text-[18px] text-surface-tint"
-                        aria-hidden="true"
-                      >
-                        {selected.icon}
-                      </span>
-                    )}
-                    <SelectValue placeholder="Select a service" />
-                  </>
-                );
-              })()}
+              {selectedService ? (
+                <>
+                  <span
+                    className="material-symbols-outlined text-[18px] text-surface-tint"
+                    aria-hidden="true"
+                  >
+                    {selectedService.icon}
+                  </span>
+                  <span className="truncate">{selectedService.label}</span>
+                </>
+              ) : (
+                <span className="text-on-surface-variant/70">
+                  Select a service
+                </span>
+              )}
             </SelectTrigger>
             <SelectContent>
               {serviceOptions.map((option) => (
@@ -308,6 +324,9 @@ export function ContactForm() {
           </Select>
           {errors.service && (
             <p id="contact-service-error" role="alert" className={errorClasses}>
+              <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
+                error
+              </span>
               {errors.service}
             </p>
           )}
@@ -333,6 +352,9 @@ export function ContactForm() {
           />
           {errors.message && (
             <p id="contact-message-error" role="alert" className={errorClasses}>
+              <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
+                error
+              </span>
               {errors.message}
             </p>
           )}
@@ -343,24 +365,35 @@ export function ContactForm() {
             htmlFor="contact-consent"
             className="flex items-start gap-3 cursor-pointer"
           >
-            <input
-              id="contact-consent"
-              name="consent"
-              type="checkbox"
-              checked={values.consent}
-              onChange={handleConsent}
-              aria-invalid={Boolean(errors.consent)}
-              aria-describedby={
-                errors.consent ? "contact-consent-error" : undefined
-              }
-              className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer appearance-none rounded border border-glass-border bg-deep-matte transition-colors duration-300 checked:bg-soft-white checked:border-soft-white focus-visible:outline-2 focus-visible:outline-soft-white"
-            />
+            <span className="relative mt-0.5 inline-flex h-5 w-5 shrink-0">
+              <input
+                id="contact-consent"
+                name="consent"
+                type="checkbox"
+                checked={values.consent}
+                onChange={handleConsent}
+                aria-invalid={Boolean(errors.consent)}
+                aria-describedby={
+                  errors.consent ? "contact-consent-error" : undefined
+                }
+                className={`peer h-5 w-5 cursor-pointer appearance-none rounded border bg-deep-matte transition-colors duration-300 checked:border-soft-white checked:bg-soft-white focus-visible:outline-2 focus-visible:outline-soft-white ${errors.consent ? "border-error/70" : "border-glass-border"}`}
+              />
+              <span
+                aria-hidden="true"
+                className="material-symbols-outlined pointer-events-none absolute inset-0 flex items-center justify-center text-[16px] font-bold text-obsidian-base opacity-0 transition-opacity duration-200 peer-checked:opacity-100"
+              >
+                check
+              </span>
+            </span>
             <span className="font-body-md text-body-md text-on-surface-variant">
               I agree to be contacted about my inquiry via email or phone.
             </span>
           </label>
           {errors.consent && (
             <p id="contact-consent-error" role="alert" className={errorClasses}>
+              <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
+                error
+              </span>
               {errors.consent}
             </p>
           )}
@@ -372,10 +405,10 @@ export function ContactForm() {
             size="lg"
             type="submit"
             disabled={status === "submitting"}
-            className="w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center gap-2"
+            className="group w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center gap-2"
           >
-            <span className="material-symbols-outlined text-[18px]">
-              {status === "submitting" ? "hourglass_top" : "send"}
+            <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+              {status === "submitting" ? "hourglass_top" : "arrow_forward"}
             </span>
             {status === "submitting" ? "Sending…" : "Send Message"}
           </Button>
@@ -391,6 +424,9 @@ export function ContactForm() {
           </p>
           {submitError && (
             <p role="alert" className={errorClasses}>
+              <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
+                error
+              </span>
               {submitError}
             </p>
           )}

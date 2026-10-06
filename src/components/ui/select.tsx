@@ -21,7 +21,7 @@ function SelectTrigger({
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       className={cn(
-        "w-full rounded-lg border border-glass-border bg-deep-matte px-4 py-3 font-body-md text-body-md text-soft-white outline-none transition-colors duration-300 focus:border-soft-white/40 data-[placeholder]:text-on-surface-variant/50 flex items-center justify-between gap-2 [&>span]:line-clamp-1",
+        "w-full rounded-lg border border-glass-border bg-deep-matte px-4 py-3.5 font-body-md text-body-md text-soft-white outline-none transition-all duration-300 hover:border-soft-white/25 focus:border-soft-white/40 focus:shadow-[0_0_0_4px_rgba(245,245,242,0.07)] data-[placeholder]:text-on-surface-variant/70 flex items-center justify-between gap-2 [&>span]:line-clamp-1",
         className
       )}
       {...props}
@@ -83,7 +83,9 @@ function SelectItem({
       )}
       {...props}
     >
-      {children}
+      <SelectPrimitive.ItemText className="flex items-center gap-3">
+        {children}
+      </SelectPrimitive.ItemText>
       <span className="ml-auto flex h-4 w-4 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
           <span className="material-symbols-outlined text-[18px]">check</span>

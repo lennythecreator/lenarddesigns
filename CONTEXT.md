@@ -14,7 +14,7 @@
 
 - **Result**: Chapter 3 — what shipped, what changed, proof. Maps to questionnaire Result (Q13-18). Shape: `{ eyebrow, title, body, gallery?, metrics?, quote? }`.
 
-- **Chapter**: Shared shape `{ eyebrow, title, body }` — eyebrow is `label-caps` index like `01 — Problem`.
+- **Chapter**: Shared shape `{ eyebrow, title, body }` — eyebrow is `label-caps` index like `01 · Problem`.
 
 - **Hero**: Header for `/projects/[id]` — reuses `Project.meta/title/image` unless `ProjectDetails.hero.image/subtitle` provided.
 

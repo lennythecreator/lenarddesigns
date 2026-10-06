@@ -16,13 +16,18 @@ type Props = {
 export function ChapterSection({ id, eyebrow, title, body, bullets, insight, image, mirrored = false }: Props) {
   const text = (
     <div className="flex flex-col">
-      <p className="font-label-caps text-label-caps text-outline">{eyebrow}</p>
+      <p className="font-label-caps text-label-caps text-on-surface-variant">{eyebrow}</p>
       <h2 className="font-headline-lg text-headline-lg text-soft-white mt-6 max-w-[20ch]">{title}</h2>
       <p className="font-body-lg text-body-lg text-on-surface-variant mt-8 max-w-[60ch]">{body}</p>
       {bullets && bullets.length > 0 && (
-        <ul className="mt-8 grid gap-3 font-body-md text-body-md text-on-surface-variant list-disc pl-6">
-          {bullets.map((b) => (
-            <li key={b}>{b}</li>
+        <ul className="mt-8 grid gap-0 font-body-md text-body-md text-on-surface-variant">
+          {bullets.map((b, i) => (
+            <li key={b} className="flex items-center gap-4 border-b border-glass-border py-4">
+              <span className="font-label-caps text-label-caps text-primary">
+                {String(i + 1).padStart(3, "0")}
+              </span>
+              <span>{b}</span>
+            </li>
           ))}
         </ul>
       )}
@@ -42,14 +47,14 @@ export function ChapterSection({ id, eyebrow, title, body, bullets, insight, ima
 
   if (!media) {
     return (
-      <section id={id} className="px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto pt-section-gap-lg border-t border-glass-border">
+      <section id={id} aria-label={eyebrow} className="scroll-mt-28 px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto mt-section-gap-lg border-t border-glass-border pt-12 md:pt-16">
         <ScrollReveal>{text}</ScrollReveal>
       </section>
     );
   }
 
   return (
-    <section id={id} className="px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto pt-section-gap-lg border-t border-glass-border">
+    <section id={id} aria-label={eyebrow} className="scroll-mt-28 px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto mt-section-gap-lg border-t border-glass-border pt-12 md:pt-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
         <ScrollReveal className={mirrored ? "lg:col-span-7 lg:order-2" : "lg:col-span-5"}>{text}</ScrollReveal>
         <ScrollReveal delay={120} className={mirrored ? "lg:col-span-5 lg:order-1" : "lg:col-span-7"}>

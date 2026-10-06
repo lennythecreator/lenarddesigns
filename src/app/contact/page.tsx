@@ -6,7 +6,7 @@ import { contactInfo } from "@/lib/contact";
 import { footerConfigs } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact — Lenard Designs",
+  title: "Contact | Lenard Designs",
 };
 
 export default function ContactPage() {

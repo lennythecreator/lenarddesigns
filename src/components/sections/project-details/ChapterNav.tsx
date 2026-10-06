@@ -24,15 +24,16 @@ export function ChapterNav() {
   }, []);
 
   return (
-    <nav className="sticky top-[72px] z-20 backdrop-blur-[20px] bg-surface/80 border-y border-glass-border">
+    <nav aria-label="Case study chapters" className="sticky top-[72px] z-20 backdrop-blur-[20px] bg-surface/80 border-y border-glass-border">
       <div className="px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto flex gap-8 py-4 overflow-x-auto">
         {chapters.map((id) => (
           <a
             key={id}
             href={`#${id}`}
-            className={`font-label-caps text-label-caps whitespace-nowrap pb-1 transition-colors ${active === id ? "text-soft-white border-b border-soft-white" : "text-outline hover:text-soft-white border-b border-transparent"}`}
+            aria-current={active === id ? "true" : undefined}
+            className={`font-label-caps text-label-caps whitespace-nowrap pb-1 min-h-[44px] inline-flex items-center transition-colors ${active === id ? "text-soft-white border-b border-soft-white" : "text-on-surface-variant hover:text-soft-white border-b border-transparent"}`}
           >
-            {id === "problem" ? "01 — Problem" : id === "idea" ? "02 — Idea" : "03 — Result"}
+            {id === "problem" ? "01 · Problem" : id === "idea" ? "02 · Idea" : "03 · Result"}
           </a>
         ))}
       </div>
