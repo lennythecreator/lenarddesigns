@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agency Review — 22/36 Acceptable</title>
+<style>
+:root{--bg:#141313;--bg2:#0e0e0e;--card:#201f1f;--line:rgba(245,245,242,.14);--txt:#e5e2e1;--mut:#c4c7c3;--dim:#8e928e;--acc:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:48px 24px 96px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
+h1{font-size:clamp(48px,7vw,84px);line-height:.95;letter-spacing:-.04em;margin:12px 0 8px}
+.sub{color:var(--mut);max-width:65ch}
+.score{display:flex;gap:16px;align-items:center;margin:28px 0;padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.badge{font-size:40px;font-weight:800;letter-spacing:-.03em}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:20px;margin:16px 0}
+.card h3{margin:0 0 8px;letter-spacing:-.02em}
+.pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;padding:4px 10px;border:1px solid var(--line);border-radius:999px;margin-right:8px}
+.p1{color:#ffb4ab}.p2{color:#fff}.p3{color:var(--mut)}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+.small{color:var(--dim);font-size:13px}
+a{color:#fff}
+footer{margin-top:48px;color:var(--dim);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="eyebrow">Impeccable critique · dual-agent · agency-website-homepage</div>
+<h1>Review: 22/36 Acceptable</h1>
+<p class="sub">Reading as: dark cinematic agency landing for founders comparing studios, prestigious/minimal, Tailwind + Plus Jakarta Sans + glass. Skin is authored. Story is interchangeable.</p>
+<div class="score"><div class="badge">22/36</div><div>Acceptable (61%) · 1 heuristic n/a (Flexibility)<br><span class="small">Method: dual-agent A ses_ef8965fc · B ses_ef8965f9 · Detector: 13 findings · No browser overlay in this harness</span></div></div>
+
+<h2>Health scores</h2>
+<table><tr><th>#</th><th>Heuristic</th><th>Score</th><th>Key issue</th></tr>
+<tr><td>1</td><td>Visibility of status</td><td>2</td><td>Splash 2600ms+700ms, no skip</td></tr>
+<tr><td>2</td><td>Match real world</td><td>3</td><td>Work → / label confusing</td></tr>
+<tr><td>3</td><td>User control</td><td>2</td><td>Autoplay video, dead showroom button</td></tr>
+<tr><td>4</td><td>Consistency</td><td>2</td><td>3 logo/footer variants, Work vs Projects</td></tr>
+<tr><td>5</td><td>Error prevention</td><td>3</td><td>Form good, # links undermine</td></tr>
+<tr><td>6</td><td>Recognition</td><td>2</td><td>Must visit /projects to understand range</td></tr>
+<tr><td>7</td><td>Flexibility</td><td>n/a</td><td>Persuade landing</td></tr>
+<tr><td>8</td><td>Aesthetic</td><td>3</td><td>240px gaps + huge type = void-fatigue</td></tr>
+<tr><td>9</td><td>Error recovery</td><td>3</td><td>Form recovery good</td></tr>
+<tr><td>10</td><td>Help/docs</td><td>2</td><td>No process/timeline/budget FAQ</td></tr>
+</table>
+
+<h2>Specificity verdict</h2>
+<div class="card"><p>Obsidian Cinematic executed with discipline, but hero <i>Lead by Design. Engineering Reality.</i>, Approach Strategy/Design/Engineering, 2 projects, anonymous testimonial fit any studio. Detector: 1 layout-transition <span class="small">globals.css:153</span>, 4 color advisory, 1 font warning <span class="small">layout.tsx:34</span>, 7 font-size advisory (icon sizes — false positives). Real drift: <span class="small">Footer.tsx:94 bg-[#15171A]</span>, three blacks in use.</p></div>
+
+<h2>What's working</h2>
+<div class="grid">
+<div class="card"><h3>Token pairing</h3><p class="small">LandingHero + ChapterSection pair display + label-caps correctly.</p></div>
+<div class="card"><h3>Contact form</h3><p class="small">Labels, aria-describedby, role=alert, consent, success fallback.</p></div>
+</div>
+
+<h2>Priority issues</h2>
+<div class="card"><span class="pill p1">P1</span><h3>Hero has no action / no proof</h3><p>LandingHeroSection.tsx:15-27. Add View Selected Work → /projects + Capabilities → /services, poster + reduced-motion gate, one proof line.</p><p class="small">Suggested: $impeccable clarify</p></div>
+<div class="card"><span class="pill p1">P1</span><h3>Work vs Projects collision</h3><p>content.ts:65-69, TopNavBar.tsx:12-16. Rename / nav to Studio or unlist.</p><p class="small">Suggested: $impeccable shape</p></div>
+<div class="card"><span class="pill p1">P1</span><h3>Showroom dead button</h3><p>ShowroomSection.tsx:40-43 &lt;button&gt; with no Link. Wrap in Link /projects/zizi, add metric + quote.</p><p class="small">Suggested: $impeccable polish</p></div>
+<div class="card"><span class="pill p2">P2</span><h3>Copy / image reuse</h3><p>SiteSense listing vs detail mismatch, Zizi.png 4×, typo securly, © 2024. Align copy, deduplicate.</p><p class="small">Suggested: $impeccable clarify</p></div>
+<div class="card"><span class="pill p2">P2</span><h3>Eyebrow / header / theme drift</h3><p>Eyebrow every section, split-header, 40px touch target, focus-visible gaps. Max 1 eyebrow/3 sections.</p><p class="small">Suggested: $impeccable layout</p></div>
+
+<h2>Personas</h2>
+<div class="card"><p><b>Jordan:</b> no proof in first viewport, gaps feel empty on mobile.<br><b>Riley:</b> no process/pricing/team, anonymous quote fails verification.<br><b>Casey:</b> triple CTA intent, # footer links at trust moment.</p></div>
+
+<h2>Minor</h2>
+<p class="small">Button primary==solid, pill unused, SectionEyebrow w-12 stubby, CinematicImage no sizes, Hero.mp4 preload auto, double backdrop-blur + 60vw glow GPU risk, transition:width → transform.</p>
+
+<h2>Next</h2>
+<p>You picked Hero + proof. Say the word and I’ll implement hero CTA + proof + IA rename.</p>
+<footer>Trend: first run for agency-website-homepage · Wrote .impeccable/critique/2026-10-04T14-57-55Z__agency-website-homepage.md</footer>
+</div>
+</body>
+</html>

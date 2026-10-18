@@ -4,6 +4,8 @@ import { SplashScreen } from "@/components/splash/SplashScreen";
 import { PageTransition } from "@/components/transitions/PageTransition";
 import "./globals.css";
 
+export const metadataBase = new URL("https://lenarddesigns.com");
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
@@ -15,6 +17,9 @@ export const metadata: Metadata = {
   title: "LENARD DESIGNS - Agency",
   description:
     "Lenard Designs pioneers the intersection of visionary aesthetics and rigorous technical execution, forging digital experiences that define the next era of human-computer interaction.",
+  openGraph: {
+    images: ["/LenardDesigns.png"],
+  },
 };
 
 export default function RootLayout({
