@@ -132,7 +132,19 @@ export const projects: Project[] = [
     href: "/projects/project-sitesense",
     layout: "right",
   },
-  
+  {
+    id: "tracky",
+    meta: "Developer Tool / React analytics SDK",
+    title: "Tracky",
+    description:
+      "A lightweight React analytics SDK that sends named events to an endpoint you already run, with source-installed UI primitives alongside it.",
+    image: {
+      src: "/Tracky.png",
+      alt: "Tracky analytics SDK diagram: a React component sending a named event through the SDK in batches to a developer-owned endpoint.",
+    },
+    href: "/projects/tracky",
+    layout: "left",
+  },
 ];
 
 export const testimonial: Testimonial = {
@@ -209,6 +221,45 @@ export const projectDetails: Record<string, ProjectDetails> = {
         { src: "/SiteSense4.png", alt: "SiteSense result gallery: detailed issue remediation view" },
       ],
       metrics: [{ label: "Audit time", value: "<30s" }],
+    },
+  },
+  tracky: {
+    id: "tracky",
+    hero: {
+      subtitle: "A lightweight React analytics SDK that sends first-party events to an endpoint you control.",
+    },
+    problem: {
+      eyebrow: "01 · Problem",
+      title: "Product teams had to choose between a hosted platform and hand-built instrumentation.",
+      body: "React developers and small product teams wanted to understand page views, feature usage, and conversion flows. A hosted analytics platform would own the data path, while building the instrumentation themselves was repetitive and easy to get wrong, especially around what must never be collected.",
+      bullets: [
+        "Hosted tools own the event data and the endpoint",
+        "Hand-rolled tracking drifts across pages and features",
+        "Automatic capture can leak field values and secrets",
+      ],
+      image: { src: "/Tracky.png", alt: "Tracky component playground: registry primitives rendered with the SDK provider beside the live event stream." },
+    },
+    idea: {
+      eyebrow: "02 · Idea",
+      title: "An SDK that measures the app without owning the data.",
+      body: "Tracky pairs an AnalyticsProvider and a useAnalytics hook with independent, opt-in capture switches for page views, clicks, form submits, input changes, frustration clicks, cursor heat maps, and scroll depth. A separate registry ships analytics-aware Button, Checkbox, Switch, and Select primitives as source, installed with the tracky CLI, so teams keep and theme the code they use. Events buffer and batch to whichever endpoint the integrator configures.",
+      insight: "Opt-in by default: measurement stays explicit, and field values never leave the page.",
+      gallery: [
+        { src: "/Tracky2.png", alt: "Tracky playground: activating the Button sends one component_interaction event to the event stream while page capture stays off." },
+        { src: "/Tracky3.png", alt: "Tracky playground: the Input and Textarea components report no event, and typed values are never read." },
+      ],
+    },
+    result: {
+      eyebrow: "03 · Result",
+      title: "A working scaffold with the privacy boundaries drawn in.",
+      body: "The SDK now tracks initial load and route changes, buffers and retries batches within bounds, and emits documented component actions while every primitive stays usable without a provider. The playground renders the same registry source and intercepts the SDK's request in the page, so each action is visible without being sent anywhere. Tracky is at v0.1.0 and not yet published to npm; hosted dashboards and license verification are explicitly out of scope.",
+      gallery: [
+        { src: "/Tracky4.png", alt: "Tracky playground: toggling the Checkbox and Switch streams component_interaction events while field values stay unread." },
+      ],
+      metrics: [
+        { label: "Initial primitives", value: "7" },
+        { label: "Documented component actions", value: "4" },
+      ],
     },
   },
 };
