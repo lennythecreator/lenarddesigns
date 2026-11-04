@@ -85,16 +85,18 @@ export function WebGLBackground() {
 
     const timeLocation = gl.getUniformLocation(program, "u_time");
     const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     let frame = 0;
 
     const render = (time: number) => {
-      time *= 0.001;
       gl.useProgram(program);
-      gl.uniform1f(timeLocation, time);
+      gl.uniform1f(timeLocation, reducedMotion ? 0 : time * 0.001);
       gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      frame = requestAnimationFrame(render);
+      if (!reducedMotion) frame = requestAnimationFrame(render);
     };
 
     frame = requestAnimationFrame(render);
@@ -105,5 +107,5 @@ export function WebGLBackground() {
     };
   }, []);
 
-  return <canvas id="glcanvas" ref={canvasRef} />;
+  return <canvas id="glcanvas" ref={canvasRef} aria-hidden="true" />;
 }

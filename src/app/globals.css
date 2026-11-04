@@ -278,50 +278,153 @@ body {
   pointer-events: none;
 }
 
-/* --- Splash: animated logo --- */
-.splash-logo-container {
-  animation: splash-container-reveal 0.6s ease-out forwards;
+/* --- Splash: brand reveal --- */
+/* The monogram opens and the full wordmark resolves behind it. One authored
+   moment, transform/opacity/filter only, and a skip control for agency. */
+.splash-root {
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.splash-letter {
-  display: inline-block;
+.splash-leaving {
   opacity: 0;
-  animation: splash-slide-letter 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-@keyframes splash-slide-letter {
-  0% {
-    opacity: 0;
-    transform: translateX(180px) scale(0.96);
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+.splash-stage {
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.splash-leaving .splash-stage {
+  opacity: 0;
+  transform: translateY(-12px) scale(1.015);
+  filter: blur(8px);
+}
+
+.splash-wordmark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: splash-fade-in 300ms ease-out both;
+}
+
+.splash-word {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.75rem, 9vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: var(--color-soft-white);
+  text-shadow: 0 0 40px rgba(245, 245, 242, 0.08);
+}
+
+/* The L and D are the actual wordmark letters: they begin as the centered
+   monogram, then glide into their real positions as the rest of the word
+   materializes between them. */
+.splash-anchor {
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.splash-anchor-l {
+  animation: splash-anchor-l 700ms cubic-bezier(0.65, 0, 0.35, 1) 450ms both;
+}
+
+.splash-anchor-d {
+  animation: splash-anchor-d 700ms cubic-bezier(0.65, 0, 0.35, 1) 450ms both;
+}
+
+.splash-rest {
+  opacity: 1;
+  filter: none;
+  animation: splash-rest-in 550ms cubic-bezier(0.4, 0, 0.2, 1) 800ms both;
+  will-change: opacity, filter;
+}
+
+.splash-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.12em;
+  height: 0.12em;
+  border-radius: 999px;
+  background: var(--color-soft-white);
+  opacity: 0.45;
+  transform: translate(-50%, -50%);
+  animation: splash-dot-out 220ms ease-out 450ms both;
+}
+
+@keyframes splash-anchor-l {
+  from {
+    transform: translateX(3.262em) scale(1.4);
   }
-  100% {
-    opacity: 1;
+  to {
     transform: translateX(0) scale(1);
   }
 }
 
-@keyframes splash-container-reveal {
-  0% {
+@keyframes splash-anchor-d {
+  from {
+    transform: translateX(0.433em) scale(1.4);
+  }
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes splash-rest-in {
+  from {
     opacity: 0;
-    transform: scale(0.98);
+    filter: blur(14px);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: scale(1);
+    filter: blur(0);
   }
 }
 
-.splash-shape-float {
-  animation: splash-shape-float 9s ease-in-out infinite;
+@keyframes splash-dot-out {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
 }
 
-@keyframes splash-shape-float {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes splash-fade-in {
+  from {
+    opacity: 0;
   }
-  50% {
-    transform: translateY(-16px);
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-stage {
+    transition: opacity 200ms ease-out;
+  }
+  .splash-leaving .splash-stage {
+    transform: none;
+    filter: none;
+  }
+  .splash-word {
+    text-shadow: none;
+  }
+  .splash-anchor-l,
+  .splash-anchor-d {
+    animation: none;
+    transform: none;
+  }
+  .splash-rest {
+    animation: none;
+  }
+  .splash-dot {
+    display: none;
   }
 }
