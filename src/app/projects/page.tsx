@@ -3,7 +3,7 @@ import { Footer } from "@/components/ui/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { PortfolioHeroSection } from "@/components/sections/PortfolioHeroSection";
 import { ProjectShowcase } from "@/components/sections/ProjectShowcase";
-import { TestimonialSection } from "@/components/sections/TestimonialSection";
+import { ProofSection } from "@/components/sections/ProofSection";
 import { footerConfigs } from "@/lib/content";
 
 export default function ProjectsPage() {
@@ -15,9 +15,7 @@ export default function ProjectsPage() {
           <PortfolioHeroSection />
         </ScrollReveal>
         <ProjectShowcase />
-        <ScrollReveal>
-          <TestimonialSection />
-        </ScrollReveal>
+        <ProofSection />
       </main>
       <Footer config={footerConfigs.project} />
     </>

@@ -13,6 +13,7 @@ const ACTIVE_BY_PATH: Record<string, string> = {
   "/": "Studio",
   "/projects": "Projects",
   "/services": "Services",
+  "/studio": "Studio",
 };
 
 export function TopNavBar() {

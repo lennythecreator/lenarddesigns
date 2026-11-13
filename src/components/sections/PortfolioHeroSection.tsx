@@ -13,9 +13,9 @@ export function PortfolioHeroSection() {
           Selected Works
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-          A curation of high-fidelity digital experiences, engineering
-          sophisticated interfaces that blend visionary aesthetics with robust
-          technical architecture.
+          Three projects, each with the client named, the role we held and the
+          numbers we can stand behind. Where a result is self-reported, the page
+          says so.
         </p>
       </div>
     </section>

@@ -20,6 +20,9 @@ function ProjectCard({ project }: { project: Project }) {
   const info = (
     <>
       <div>
+        <p className="font-label-caps text-label-caps text-surface-tint mb-3">
+          {project.ownership.toUpperCase()} · {project.status.toUpperCase()}
+        </p>
         <p className="font-label-caps text-label-caps text-outline mb-4">
           {project.meta}
         </p>
@@ -29,6 +32,27 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="font-body-md text-body-md text-on-surface-variant">
           {project.description}
         </p>
+        <dl className="mt-6 space-y-3 border-t border-glass-border pt-5">
+          <div className="flex justify-between gap-4">
+            <dt className="font-label-caps text-label-caps text-outline">
+              CLIENT
+            </dt>
+            <dd className="font-body-md text-body-md text-soft-white text-right">
+              {project.client}
+            </dd>
+          </div>
+          <div className="flex justify-between gap-4">
+            <dt className="font-label-caps text-label-caps text-outline">
+              OUR ROLE
+            </dt>
+            <dd className="font-body-md text-body-md text-soft-white text-right max-w-[24ch]">
+              {project.role}
+            </dd>
+          </div>
+        </dl>
+        <p className="font-body-md text-body-md text-on-surface-variant/80 mt-5">
+          {project.proofNote}
+        </p>
       </div>
       <div className="mt-8">
         <Link
@@ -36,7 +60,7 @@ function ProjectCard({ project }: { project: Project }) {
           className="inline-flex items-center gap-2 text-soft-white font-label-caps text-label-caps border border-glass-border px-6 py-4 rounded hover:bg-white/5 transition-colors"
         >
           Explore Case Study{" "}
-          <span className="material-symbols-outlined text-[16px]">
+          <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
             arrow_forward
           </span>
         </Link>

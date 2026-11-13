@@ -10,10 +10,21 @@ export function ProjectDetailsHero({ project, details }: Props) {
   const proof = details.result.metrics?.[0];
 
   return (
-    <section aria-labelledby="project-title" className="px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto pt-24 md:pt-32 pb-12 md:pb-16">
+    <section
+      aria-labelledby="project-title"
+      className="px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto pt-24 md:pt-32 pb-12 md:pb-16"
+    >
       <ScrollReveal>
-        <p className="font-label-caps text-label-caps text-on-surface-variant">{project.meta}</p>
-        <h1 id="project-title" className="font-display-lg-mobile text-display-lg-mobile md:font-display-xl md:text-display-xl text-soft-white mt-4 max-w-[16ch]">
+        <p className="font-label-caps text-label-caps text-outline">
+          {project.ownership.toUpperCase()} · {project.client.toUpperCase()}
+        </p>
+        <p className="font-label-caps text-label-caps text-on-surface-variant mt-3">
+          {project.meta}
+        </p>
+        <h1
+          id="project-title"
+          className="font-display-lg-mobile text-display-lg-mobile md:font-display-xl md:text-display-xl text-soft-white mt-4 max-w-[16ch]"
+        >
           {project.title}
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-[60ch]">
@@ -27,8 +38,20 @@ export function ProjectDetailsHero({ project, details }: Props) {
       </ScrollReveal>
       <ScrollReveal delay={120}>
         <div className="mt-12 rounded-lg overflow-hidden cinematic-shadow">
-          <CinematicImage src={image.src} alt={image.alt} fill className="aspect-[16/9] md:aspect-[21/9]" priority sizes="100vw" />
+          <CinematicImage
+            src={image.src}
+            alt={image.alt}
+            fill
+            className="aspect-[16/9] md:aspect-[21/9]"
+            priority
+            sizes="100vw"
+          />
         </div>
+        {details.visualNote && (
+          <p className="font-body-md text-body-md text-outline mt-4 max-w-[80ch]">
+            {details.visualNote}
+          </p>
+        )}
       </ScrollReveal>
     </section>
   );

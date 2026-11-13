@@ -4,8 +4,6 @@ import { SplashScreen } from "@/components/splash/SplashScreen";
 import { PageTransition } from "@/components/transitions/PageTransition";
 import "./globals.css";
 
-export const metadataBase = new URL("https://lenarddesigns.com");
-
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
@@ -14,9 +12,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "LENARD DESIGNS - Agency",
+  metadataBase: new URL("https://lenarddesigns.com"),
+  title: "Lenard Designs — Design and engineering studio in Maryland",
   description:
-    "Lenard Designs pioneers the intersection of visionary aesthetics and rigorous technical execution, forging digital experiences that define the next era of human-computer interaction.",
+    "Lenard Designs is an independent design and engineering studio in Maryland. We design and build websites, mobile apps and startup MVPs: strategy, interface design and front-end engineering from one team.",
   openGraph: {
     images: ["/LenardDesigns.png"],
   },

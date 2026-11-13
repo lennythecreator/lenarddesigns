@@ -20,7 +20,7 @@ export function LandingHeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-end min-h-[60vh]">
         <div className="max-w-4xl">
           <p className="font-label-caps text-label-caps text-surface-tint mb-6">
-            Diaspora PropTech · Accessibility Auditing · &lt;30s Results
+            Design and engineering studio · Maryland
           </p>
           <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-xl md:text-display-xl text-soft-white mb-8 cinematic-glow [text-shadow:0_2px_24px_rgba(0,0,0,0.65)]">
             Lead by Design.
@@ -28,8 +28,9 @@ export function LandingHeroSection() {
             Engineering Reality.
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
-            Great design and solid engineering rarely come from the same place.
-            Lenard Designs is built to deliver both.
+            We design and build websites, mobile apps and MVPs for small teams in
+            Maryland, DC and Virginia. One senior designer-engineer takes each
+            project from the first sketch to the deployed build.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
@@ -42,7 +43,7 @@ export function LandingHeroSection() {
               href="/services"
               className="font-label-caps text-label-caps inline-flex items-center justify-center px-8 py-4 bg-transparent text-primary border border-glass-border rounded hover:bg-soft-white/10 transition-colors duration-300"
             >
-              Our Capabilities
+              Services &amp; Pricing
             </Link>
           </div>
         </div>

@@ -1,9 +1,19 @@
 # Lenard Designs
 
-> Lenard Designs is a digital design and engineering agency that forges digital experiences at the intersection of visionary aesthetics and rigorous technical execution. We lead by design and engineer reality — specializing in website design & development, mobile app development, e-commerce, startup MVPs, and marketing & event sites.
+> Lenard Designs is an independent design and engineering studio in Maryland, United States. One senior designer-engineer leads every project. The studio designs and builds websites, mobile apps, e-commerce stores, startup MVPs and marketing or event sites, with strategy, interface design and front-end engineering handled by the same team. Timelines are set per project in the written scope, because they depend on the scope, the integrations and how ready the content is. Every engagement starts with that written scope and a fixed fee.
 
 ## Important URLs
 
 - [Home](https://lenarddesigns.com)
-- [Projects](https://lenarddesigns.com/projects)
+- [Studio](https://lenarddesigns.com/studio)
 - [Services](https://lenarddesigns.com/services)
+- [Projects](https://lenarddesigns.com/projects)
+- [Contact](https://lenarddesigns.com/contact)
+- [Privacy Policy](https://lenarddesigns.com/privacy)
+- [Terms of Service](https://lenarddesigns.com/terms)
+
+## Case studies
+
+- [Zizi](https://lenarddesigns.com/projects/Zizi): client engagement, pilot release, property buying platform for diaspora buyers.
+- [SiteSense](https://lenarddesigns.com/projects/project-sitesense): research collaboration with the CoNA Lab, working prototype for WCAG accessibility auditing.
+- [Tracky](https://lenarddesigns.com/projects/tracky): studio product, React analytics SDK at v0.1.0, not yet published.

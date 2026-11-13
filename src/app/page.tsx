@@ -2,6 +2,7 @@ import { TopNavBar } from "@/components/ui/TopNavBar";
 import { Footer } from "@/components/ui/Footer";
 import { LandingHeroSection } from "@/components/sections/LandingHeroSection";
 import { ApproachSection } from "@/components/sections/ApproachSection";
+import { StudioIntroSection } from "@/components/sections/StudioIntroSection";
 import { ShowroomSection } from "@/components/sections/ShowroomSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { footerConfigs } from "@/lib/content";
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <LandingHeroSection />
         <ApproachSection />
+        <StudioIntroSection />
         <ShowroomSection />
         <CTASection />
       </main>

@@ -20,8 +20,9 @@ export function ServicesHeroSection() {
           The relationship between design and engineering.
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-          We believe true craftsmanship requires deep knowledge of both the surface and the structure. We don&apos;t just design interfaces; we engineer
-          digital environments.
+          We design and build websites, apps and MVPs for small teams in
+          Maryland, DC and Northern Virginia. Fixed scope, a written fee and a
+          dated plan, with the same person designing and building the work.
         </p>
       </div>
     </header>

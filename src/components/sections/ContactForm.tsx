@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
@@ -167,8 +168,8 @@ export function ContactForm() {
           touch.
         </h2>
         <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mb-8">
-          Your message is in. We&apos;ll reply to you shortly. Prefer direct
-          contact? Email{" "}
+          Your message is in. We reply within one business day, Monday to
+          Friday. Prefer direct contact? Email{" "}
           <a
             href={contactInfo.emailHref}
             className="text-soft-white underline underline-offset-4 hover:text-surface-tint transition-colors"
@@ -386,7 +387,15 @@ export function ContactForm() {
               </span>
             </span>
             <span className="font-body-md text-body-md text-on-surface-variant">
-              I agree to be contacted about my inquiry via email or phone.
+              I agree to be contacted about my inquiry via email or phone. See
+              the{" "}
+              <Link
+                href="/privacy"
+                className="text-soft-white underline underline-offset-4 hover:text-surface-tint transition-colors"
+              >
+                privacy policy
+              </Link>
+              .
             </span>
           </label>
           {errors.consent && (

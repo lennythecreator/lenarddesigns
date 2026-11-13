@@ -4,6 +4,7 @@ import { TopNavBar } from "@/components/ui/TopNavBar";
 import { Footer } from "@/components/ui/Footer";
 import { projects, projectDetails, footerConfigs } from "@/lib/content";
 import { ProjectDetailsHero } from "@/components/sections/project-details/ProjectDetailsHero";
+import { ProjectFacts } from "@/components/sections/project-details/ProjectFacts";
 import { ChapterSection } from "@/components/sections/project-details/ChapterSection";
 import { SplitShowGallery } from "@/components/sections/project-details/SplitShowGallery";
 import { ResultProof } from "@/components/sections/project-details/ResultProof";
@@ -16,7 +17,11 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
   const { id } = await params;
   const project = projects.find((p) => p.id === id);
   const details = projectDetails[id];
@@ -30,7 +35,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
-export default async function ProjectDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const project = projects.find((p) => p.id === id);
   const details = projectDetails[id];
@@ -41,7 +50,10 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
       <TopNavBar />
       <main className="bg-background">
         <ProjectDetailsHero project={project} details={details} />
-        <ChapterNav />
+        <ProjectFacts project={project} />
+        <div className="mt-16 md:mt-20">
+          <ChapterNav />
+        </div>
         <ChapterSection
           id="problem"
           eyebrow={details.problem.eyebrow}
@@ -65,7 +77,11 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
           title={details.result.title}
           body={details.result.body}
         />
-        <ResultProof gallery={details.result.gallery} metrics={details.result.metrics} quote={details.result.quote} />
+        <ResultProof
+          gallery={details.result.gallery}
+          metrics={details.result.metrics}
+          measurement={details.result.measurement}
+        />
         <NextProjectCTA currentId={id} />
       </main>
       <Footer config={footerConfigs.project} />

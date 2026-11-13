@@ -28,8 +28,11 @@ export function ServicePillar({ pillar }: ServicePillarProps) {
       <h2 className="font-headline-lg text-headline-lg text-soft-white mb-6">
         {pillar.title}
       </h2>
-      <p className="font-body-lg text-body-lg mb-8 text-soft-white/80">
+      <p className="font-body-lg text-body-lg mb-4 text-soft-white/80">
         {pillar.description}
+      </p>
+      <p className="font-body-md text-body-md text-surface-tint mb-8">
+        {pillar.audience}
       </p>
       <ul className="space-y-4">
         {pillar.features.map((feature) => (
@@ -46,6 +49,30 @@ export function ServicePillar({ pillar }: ServicePillarProps) {
           </li>
         ))}
       </ul>
+      <dl className="mt-8 grid grid-cols-2 gap-gutter">
+        <div>
+          <dt className="font-label-caps text-label-caps text-outline mb-2">
+            TIMELINE
+          </dt>
+          <dd className="font-body-md text-body-md text-soft-white">
+            {pillar.timeline}
+          </dd>
+        </div>
+        <div>
+          <dt className="font-label-caps text-label-caps text-outline mb-2">
+            PRICING
+          </dt>
+          <dd className="font-body-md text-body-md text-soft-white">
+            {pillar.investment}
+          </dd>
+        </div>
+      </dl>
+      <p className="font-body-md text-body-md text-on-surface-variant mt-6">
+        <span className="font-label-caps text-label-caps text-outline mr-2">
+          STACK
+        </span>
+        {pillar.stack.join(" · ")}
+      </p>
     </div>
   );
 
@@ -62,11 +89,7 @@ export function ServicePillar({ pillar }: ServicePillarProps) {
         ["--hairline-lo" as string]: "#444845",
       }}
     >
-      <Figure
-        theme="dark"
-        intensity={0.6}
-        aria-label={pillar.image.alt}
-      />
+      <Figure theme="dark" intensity={0.6} aria-label={pillar.image.alt} />
     </div>
   );
 
