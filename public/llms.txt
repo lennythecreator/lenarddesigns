@@ -1,6 +1,6 @@
 # Lenard Designs
 
-> Lenard Designs is an independent design and engineering studio in Maryland, United States. One senior designer-engineer leads every project. The studio designs and builds websites, mobile apps, e-commerce stores, startup MVPs and marketing or event sites, with strategy, interface design and front-end engineering handled by the same team. Timelines are set per project in the written scope, because they depend on the scope, the integrations and how ready the content is. Every engagement starts with that written scope and a fixed fee.
+> Lenard Designs is an independent design and engineering studio in Maryland, United States. One engineer works on every project. The studio designs and builds websites, mobile apps, e-commerce stores, startup MVPs and marketing or event sites, with strategy, interface design and front-end engineering handled by the same team. Timelines are set per project in the written scope, because they depend on the scope, the integrations and how ready the content is. Every engagement starts with that written scope and a fixed fee.
 
 ## Important URLs
 

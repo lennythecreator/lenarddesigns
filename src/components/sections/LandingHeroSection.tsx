@@ -29,8 +29,8 @@ export function LandingHeroSection() {
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface max-w-2xl [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
             We design and build websites, mobile apps and MVPs for small teams in
-            Maryland, DC and Virginia. One senior designer-engineer takes each
-            project from the first sketch to the deployed build.
+            Maryland, DC and Virginia. The same engineer takes each project
+            from the first scope to the deployed build.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link

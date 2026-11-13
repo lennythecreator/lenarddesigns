@@ -21,7 +21,7 @@ below is implemented in the site; verification results are at the bottom.
 
 ## 3. Add the people (review: trust 3/10, "no founder, team or history")
 
-- [x] A `/studio` page names the founder, their role and background, and who works on each project. (`src/app/studio/page.tsx`, `studioProfile`)
+- [x] A `/studio` page names the person who runs engagements, their role and background, and who works on each project. Lenny is presented as a studio member, not as owner or founder. (`src/app/studio/page.tsx`, `studioProfile.member`)
 - [x] The studio page states where the studio is, how it is sized, who leads the work and what it does not do (no account manager, no junior handoff). (facts grid + principles)
 - [x] The home page gains a studio section linking to `/studio`. (`StudioIntroSection.tsx`)
 - [x] Navigation and footer expose the studio page. (`navItems`, all three `footerConfigs`)
@@ -73,7 +73,7 @@ below is implemented in the site; verification results are at the bottom.
 
 The site has honest slots for these; confirm them before treating the content as final.
 
-- Founder surname and a real portrait (the studio page uses the first name and a monogram plate).
+- A real portrait (the studio page uses Lenny's first name and a monogram plate). The copy deliberately avoids owner or founder wording, per the owner's legal preference.
 - Exact Zizi pilot cohort size and dates (the page states the window, baseline and method, and that the figures are team-reported).
 - A public demo or repository link for Tracky and SiteSense (both state a walkthrough is available on request).
 - Live social profile URLs (social links stay removed until profiles exist).

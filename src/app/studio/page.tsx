@@ -9,11 +9,11 @@ import { studioProfile, contactInfo, footerConfigs } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Studio | Lenard Designs",
   description:
-    "Lenard Designs is an independent design and engineering studio in Maryland, led by its founder on every project. Who you work with, how the studio is set up and what you can verify.",
+    "Lenard Designs is an independent design and engineering studio in Maryland, with one engineer on every project. Who you work with, how the studio is set up and what you can verify.",
 };
 
 export default function StudioPage() {
-  const { introduction, founder, facts, principles, proofPoints } = studioProfile;
+  const { introduction, member, facts, principles, proofPoints } = studioProfile;
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function StudioPage() {
               className="mb-8"
             />
             <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-soft-white max-w-[18ch] mb-8">
-              A studio of one lead, and the specialists each project needs.
+              A small studio, and the specialists each project needs.
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
               {introduction}
@@ -36,21 +36,21 @@ export default function StudioPage() {
         </header>
 
         <section
-          aria-labelledby="founder-heading"
+          aria-labelledby="member-heading"
           className="px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto pb-section-gap-md border-t border-glass-border pt-16"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
             <ScrollReveal className="lg:col-span-5">
               <div
                 role="img"
-                aria-label={`Monogram plate for ${founder.name}`}
+                aria-label={`Monogram plate for ${member.name}`}
                 className="relative flex aspect-square w-full max-w-sm items-center justify-center rounded-lg border border-glass-border bg-deep-matte cinematic-shadow"
               >
                 <span
                   aria-hidden="true"
                   className="font-display-lg text-display-lg text-soft-white/90"
                 >
-                  {founder.monogram}
+                  {member.monogram}
                 </span>
                 <span
                   aria-hidden="true"
@@ -61,16 +61,16 @@ export default function StudioPage() {
 
             <ScrollReveal delay={120} className="lg:col-span-6 lg:col-start-7">
               <h2
-                id="founder-heading"
+                id="member-heading"
                 className="font-headline-lg text-headline-lg text-soft-white"
               >
-                {founder.name}
+                {member.name}
               </h2>
               <p className="font-label-caps text-label-caps text-surface-tint mt-3">
-                {founder.role.toUpperCase()}
+                {member.role.toUpperCase()}
               </p>
               <p className="font-body-lg text-body-lg text-on-surface-variant mt-6">
-                {founder.bio}
+                {member.bio}
               </p>
               <dl className="mt-10 grid gap-x-gutter gap-y-6 sm:grid-cols-2 border-t border-glass-border pt-8">
                 {facts.map((fact) => (

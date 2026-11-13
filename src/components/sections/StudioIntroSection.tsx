@@ -5,10 +5,10 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 /**
  * Home-page presence for the people behind the work. The review found no
- * named founder anywhere on the site; this band names the lead and links out.
+ * named team anywhere on the site; this band introduces the studio and links out.
  */
 export function StudioIntroSection() {
-  const leadFacts = studioProfile.facts.slice(0, 2);
+  const studioFacts = studioProfile.facts.slice(0, 2);
 
   return (
     <section
@@ -22,7 +22,7 @@ export function StudioIntroSection() {
             id="studio-intro"
             className="font-headline-lg text-headline-lg text-soft-white mt-6 max-w-[18ch]"
           >
-            One senior lead on every project, not a rotating team.
+            The same engineer on every project, not a rotating team.
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={120} className="lg:col-span-6 lg:col-start-7">
@@ -30,7 +30,7 @@ export function StudioIntroSection() {
             {studioProfile.introduction}
           </p>
           <dl className="mt-10 grid gap-6 sm:grid-cols-2 border-t border-glass-border pt-8">
-            {leadFacts.map((fact) => (
+            {studioFacts.map((fact) => (
               <div key={fact.label}>
                 <dt className="font-label-caps text-label-caps text-outline mb-2">
                   {fact.label.toUpperCase()}

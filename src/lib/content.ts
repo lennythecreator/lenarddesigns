@@ -92,7 +92,7 @@ export type StudioFact = {
 
 export type StudioProfile = {
   introduction: string;
-  founder: {
+  member: {
     name: string;
     role: string;
     bio: string;
@@ -113,6 +113,7 @@ export type { ContactInfo } from "./contact";
 export { contactInfo } from "./contact";
 
 export const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Studio", href: "/studio" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
@@ -542,12 +543,12 @@ export const engagementNotes: string[] = [
 
 export const studioProfile: StudioProfile = {
   introduction:
-    "Lenard Designs is an independent design and engineering studio in Maryland. One senior designer-engineer leads every project, with a small bench of backend, motion and copy specialists brought in when the work calls for it.",
-  founder: {
-    name: "Lenard",
-    role: "Founder · design and engineering",
+    "Lenard Designs is an independent design and engineering studio in Maryland. The engineer who scopes a project builds it, with design, motion and copy specialists brought in when the work calls for it.",
+  member: {
+    name: "Lenny",
+    role: "Engineering",
     bio:
-      "Lenard Designs is run by Lenard, a designer and front-end engineer working in Maryland. He runs strategy, interface design and the build on every engagement, which is why the studio can promise one person from first sketch to deployment. Backend, motion and copy specialists join per project when the scope needs them.",
+      "Lenny is the engineer at Lenard Designs, working in Maryland and a member of the studio. He builds what the studio designs: the front end, the integrations and the deployment, with design, motion and copy specialists joining per project when the scope needs them.",
     monogram: "L",
   },
   facts: [
@@ -556,14 +557,14 @@ export const studioProfile: StudioProfile = {
       label: "Serving",
       value: "Maryland, Washington DC and Northern Virginia, remote across the US",
     },
-    { label: "Studio size", value: "One lead, two to three collaborators per project" },
+    { label: "Studio size", value: "Two to three people per project" },
     { label: "Reply time", value: "One business day, Monday to Friday" },
   ],
   principles: [
     {
       title: "You work with the person doing the work",
       description:
-        "No account manager and no handoff to a junior team. The person who scopes the project designs it and builds it.",
+        "No account manager and no handoff to a junior team. The engineer who scopes the project is the one who builds it.",
     },
     {
       title: "Scope, dates and fee in writing",
