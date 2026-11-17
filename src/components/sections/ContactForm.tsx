@@ -296,12 +296,14 @@ export function ContactForm() {
               {selectedService ? (
                 <>
                   <span
-                    className="material-symbols-outlined text-[18px] text-surface-tint"
+                    className="flex h-5 w-5 shrink-0 items-center justify-center"
                     aria-hidden="true"
                   >
-                    {selectedService.icon}
+                    <span className="material-symbols-outlined text-[18px] leading-none text-surface-tint">
+                      {selectedService.icon}
+                    </span>
                   </span>
-                  <span className="truncate">{selectedService.label}</span>
+                  <span className="truncate leading-5">{selectedService.label}</span>
                 </>
               ) : (
                 <span className="text-on-surface-variant/70">
@@ -313,12 +315,14 @@ export function ContactForm() {
               {serviceOptions.map((option) => (
                 <SelectItem key={option.value} value={option.value}>
                   <span
-                    className="material-symbols-outlined text-[18px] text-surface-tint"
+                    className="flex h-5 w-5 shrink-0 items-center justify-center"
                     aria-hidden="true"
                   >
-                    {option.icon}
+                    <span className="material-symbols-outlined text-[18px] leading-none text-surface-tint">
+                      {option.icon}
+                    </span>
                   </span>
-                  {option.label}
+                  <span className="leading-5">{option.label}</span>
                 </SelectItem>
               ))}
             </SelectContent>
